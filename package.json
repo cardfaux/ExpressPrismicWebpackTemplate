@@ -4,13 +4,17 @@
   "description": "template for webpack configuration",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --config ./webpack/webpack.prod.js",
-    "dev": "webpack serve --progress --config ./webpack/webpack.dev.js",
-    "start": "npm run dev",
+    "backend:build": "node server.js",
+    "backend:dev": "nodemon server.js",
+    "frontend:build": "webpack --progress --config ./webpack/webpack.prod.js",
+    "frontend:dev": "webpack serve --progress --config ./webpack/webpack.dev.js",
+    "start": "concurrently --kill-others \"npm run backend:dev\" \"npm run frontend:dev\"",
     "build-report": "webpack-bundle-analyzer --port 4200 ./dist/stats.json"
   },
   "keywords": [
     "webpack",
+    "express",
+    "prismic",
     "template"
   ],
   "author": "James Hagood",
@@ -37,6 +41,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
     "mini-css-extract-plugin": "^2.6.1",
+    "nodemon": "^2.0.18",
     "postcss-loader": "^7.0.0",
     "prettier": "2.7.1",
     "raw-loader": "^4.0.2",
@@ -48,5 +53,10 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "concurrently": "^7.2.2",
+    "express": "^4.18.1",
+    "pug": "^3.0.2"
   }
 }

@@ -11,9 +11,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev';
 
-const dirApp = path.join(__dirname, '../app');
-const dirAssets = path.join(__dirname, '../assets');
-const dirStyles = path.join(__dirname, '../styles');
+const dirApp = path.join(__dirname, '../src/app');
+const dirAssets = path.join(__dirname, '../src/assets');
+const dirStyles = path.join(__dirname, '../src/styles');
 const dirNode = '../node_modules';
 
 module.exports = {
@@ -109,13 +109,13 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../assets'),
+          from: path.resolve(__dirname, '../src/assets'),
           to: '../dist/assets',
         },
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/bundle.[contenthash].css',
+      filename: 'css/bundle.css',
       chunkFilename: '[id].css',
     }),
     new ESLintPlugin(),
