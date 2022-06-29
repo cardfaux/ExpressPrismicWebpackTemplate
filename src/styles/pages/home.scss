@@ -1,0 +1,48 @@
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home__wrapper {
+  background: url(../assets/WesleighHagoodHero.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// .home__image {
+// }
+
+.home__image__media {
+  background-color: #e7dede;
+}
+
+.home__image__media__image {
+  width: 100vw;
+  height: 100vh;
+  opacity: 20%;
+}
+
+.home__titles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__titles__marguee {
+  font-family: $font-graduate-regular;
+  font-size: 100px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: black;
+}

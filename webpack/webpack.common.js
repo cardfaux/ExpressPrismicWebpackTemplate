@@ -89,7 +89,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name].[hash][ext][query]',
+          filename: 'fonts/[name][ext][query]',
         },
       },
       {
@@ -115,7 +115,7 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/bundle.css',
+      filename: 'bundle.css',
       chunkFilename: '[id].css',
     }),
     new ESLintPlugin(),

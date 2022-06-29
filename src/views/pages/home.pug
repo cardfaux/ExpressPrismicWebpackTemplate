@@ -4,4 +4,11 @@ block variables
 	- var template = 'home'
 
 block content
-	h1.home__title Home
+	.home(data-background="#292929" data-color="#F9F1E7")
+		.home__wrapper
+			.home__image 
+				figure.home__image__media
+					img.home__image__media__image(alt=home.data.hero.alt src=home.data.hero.url)
+
+			.home__titles 
+				h1.home__titles__marguee=home.data.marquee
