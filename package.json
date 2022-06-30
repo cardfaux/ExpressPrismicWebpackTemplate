@@ -4,8 +4,8 @@
   "description": "template for webpack configuration",
   "main": "index.js",
   "scripts": {
-    "backend:build": "node server.js",
-    "backend:dev": "nodemon server.js",
+    "backend:build": "node server/server.mjs",
+    "backend:dev": "nodemon server/server.mjs",
     "frontend:build": "webpack --progress --config ./webpack/webpack.prod.js",
     "frontend:dev": "webpack serve --progress --config ./webpack/webpack.dev.js",
     "start": "concurrently --kill-others \"npm run backend:dev\" \"npm run frontend:dev\"",
@@ -55,7 +55,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@prismicio/client": "^4.0.0",
+    "@prismicio/client": "^6.0.0",
+    "@prismicio/helpers": "^2.3.1",
     "body-parser": "^1.20.0",
     "concurrently": "^7.2.2",
     "dotenv": "^16.0.1",
@@ -63,7 +64,7 @@
     "express": "^4.18.1",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
-    "prismic-dom": "^2.2.5",
+    "node-fetch": "^3.2.6",
     "pug": "^3.0.2",
     "ua-parser-js": "^1.0.2"
   }
