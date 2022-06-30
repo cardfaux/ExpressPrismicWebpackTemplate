@@ -12,3 +12,13 @@ block content
 
 			.home__titles 
 				h1.home__titles__marguee=home.data.marquee
+
+			each section in home.data.body
+				if section.slice_type == 'gallery'
+					each media in section.items
+						figure.about__gallery__media
+							img.about__gallery__media__image(alt=media.galleryimage.alt src=media.galleryimage.url)
+
+				if section.slice_type == 'title'
+
+					h2=section.primary.title

@@ -9,9 +9,10 @@ const port = process.env.PORT || 4000;
 
 // prismic imports
 import * as prismicH from '@prismicio/helpers';
-import { client } from './config/prismicConfig.mjs';
 
 import UAParser from 'ua-parser-js';
+
+import { homePage } from './routes/home.mjs';
 
 /*
 ===============================================================================
@@ -50,11 +51,9 @@ app.use((req, res, next) => {
     return index == 0 ? 'One' : index == 1 ? 'Two' : index == 2 ? 'Three' : index == 3 ? 'Four' : '';
   };
 
-  res.locals.ctx = {
+  res.locals.PrismicHelpers = {
     prismicH,
   };
-
-  //res.locals.PrismicDOM = PrismicDOM;
 
   next();
 });
@@ -64,18 +63,7 @@ app.use((req, res, next) => {
 ROUTES
 ===============================================================================
 */
-// homepage
-app.get('/', async (req, res) => {
-  const home = await client.getSingle('home');
-  const meta = await client.getSingle('metadata');
-  const preloader = await client.getSingle('preloader');
-
-  res.render('pages/home', {
-    home,
-    meta,
-    preloader,
-  });
-});
+app.get('/', homePage);
 
 /*
 ===============================================================================
