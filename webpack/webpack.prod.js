@@ -6,6 +6,6 @@ const commonConfiguration = require('./webpack.common');
 module.exports = merge(commonConfiguration, {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../__dist'),
   },
 });

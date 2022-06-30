@@ -8,4 +8,4 @@
 
 ## The express server runs on port 4000
 
-## Some of the ways I structured the dist folder may need re-done as it is built.
+## Some of the ways I structured the \_\_dist folder may need re-done as it is built.

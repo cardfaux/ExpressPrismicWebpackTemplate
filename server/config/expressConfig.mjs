@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 export default (() => {
   const app = express();
 
-  app.set('views', path.join(__dirname, '../../src/views'));
+  app.set('views', path.join(__dirname, '../../client/views'));
   app.set('view engine', 'pug');
 
   app.use(logger('dev'));
@@ -22,7 +22,7 @@ export default (() => {
   if (process.env.NODE_ENV === 'development') {
     app.use(errorHandler());
   }
-  app.use(express.static(path.join(__dirname, '../../dist')));
+  app.use(express.static(path.join(__dirname, '../../__dist')));
 
   return app;
 })();

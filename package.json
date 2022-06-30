@@ -1,7 +1,7 @@
 {
-  "name": "webpacktemplate",
+  "name": "expressprismicwebpacktemplate",
   "version": "1.0.0",
-  "description": "template for webpack configuration",
+  "description": "template for express, prismic, and webpack configuration",
   "main": "index.js",
   "scripts": {
     "backend:build": "node server/server.mjs",
@@ -9,7 +9,7 @@
     "frontend:build": "webpack --progress --config ./webpack/webpack.prod.js",
     "frontend:dev": "webpack serve --progress --config ./webpack/webpack.dev.js",
     "start": "concurrently --kill-others \"npm run backend:dev\" \"npm run frontend:dev\"",
-    "build-report": "webpack-bundle-analyzer --port 4200 ./dist/stats.json"
+    "build-report": "webpack-bundle-analyzer --port 4200 ./__dist/stats.json"
   },
   "keywords": [
     "webpack",

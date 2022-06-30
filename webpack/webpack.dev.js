@@ -11,7 +11,7 @@ module.exports = merge(commonConfiguration, {
       writeToDisk: true,
     },
     static: {
-      directory: path.resolve(__dirname, '../dist'),
+      directory: path.resolve(__dirname, '../__dist'),
     },
     port: 3000,
     open: false,
@@ -20,6 +20,6 @@ module.exports = merge(commonConfiguration, {
     historyApiFallback: true,
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../__dist'),
   },
 });

@@ -11,16 +11,16 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev';
 
-const dirApp = path.join(__dirname, '../src/app');
-const dirAssets = path.join(__dirname, '../src/assets');
-const dirStyles = path.join(__dirname, '../src/styles');
+const dirApp = path.join(__dirname, '../client/app');
+const dirAssets = path.join(__dirname, '../client/assets');
+const dirStyles = path.join(__dirname, '../client/styles');
 const dirNode = '../node_modules';
 
 module.exports = {
   entry: [path.join(dirApp, 'index.js'), path.join(dirStyles, 'index.scss')],
   output: {
     hashFunction: 'xxhash64',
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../__dist'),
     filename: 'js/bundle.[contenthash].js',
     clean: true,
   },
@@ -109,8 +109,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../src/assets'),
-          to: '../dist/assets',
+          from: path.resolve(__dirname, '../client/assets'),
+          to: '../__dist/assets',
         },
       ],
     }),
